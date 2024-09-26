@@ -63,7 +63,7 @@ else
       subtotal = quantity * item_price
     end
     total += subtotal
-    puts "#{item_name} (x#{quantity}): #{subtotal.round(2)}€"
+    puts "#{pluralise(item_name,quantity)} (x#{quantity}): #{subtotal.round(2)}€"
   end
 
   puts "--------------------"
