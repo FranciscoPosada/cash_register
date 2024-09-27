@@ -1,8 +1,9 @@
 require_relative './models/product'
 require_relative './models/cart'
-require_relative './models/pricing_rules'
+require_relative './models/discounts'
 require_relative './views/view'
 require_relative './presenters/presenter'
+require_relative './pluralise'
 
 store = {
   "GR1" => { name: "Green Tea", price: 3.11 },
@@ -13,3 +14,6 @@ store = {
 view = View.new
 cart = Cart.new
 pricing_rules = PricingRules.new(store)
+
+presenter = Presenter.new(view, cart, pricing_rules, store)
+presenter.run
