@@ -1,7 +1,7 @@
 require_relative 'pluralise'
 
-puts "Welcome to Instacart"
-puts "--------------------------"
+puts "Welcome to Amenitiz Cash Register!"
+puts "-----------------------------------"
 
 store = {
   "GR1" => { name: "Green Tea", price: 3.11 },
@@ -17,7 +17,7 @@ store.each do |code, info|
   puts "#{info[:name]} (#{code}): #{info[:price]}€"
 end
 
-puts "--------------------"
+puts "-----------------------------------"
 
 until the_item == "QUIT"
   puts "Which item code? (or 'quit' to checkout)"
