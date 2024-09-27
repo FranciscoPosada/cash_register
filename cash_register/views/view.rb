@@ -24,7 +24,8 @@ class View
       puts "\nYour cart:"
       cart.items.each do |item_code, quantity|
         item_name = store[item_code][:name]
-        puts "#{item_name} (x#{quantity})"
+        pluralized_name = quantity == 1 || item_name.end_with?("s") ? item_name : "#{item_name}s" # Inline pluralization
+        puts "#{pluralized_name} (x#{quantity})"
       end
       puts "--------------------"
       puts "Total bill: #{total.round(2)}€"
