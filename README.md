@@ -28,7 +28,7 @@ pricing rules and discounts specified by senior management.
 
 ### Prerequisites
 
-ç Ruby version 3.1.2p20 (or later)
+• Ruby version 3.1.2p20 (or later)
 
 Ensure that you have Ruby version 3.1.2p20 (or later) installed on your local
 device. If you don't have Ruby installed, you can install it by following the instructions from the official <a href="https://www.ruby-lang.org/en/documentation/installation/" target="_blank">Ruby documentation</a>.</p>
