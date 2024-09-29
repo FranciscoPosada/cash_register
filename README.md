@@ -193,7 +193,7 @@ To run a specific test file, e.g. tests for the cart model, run:
 
 - **User Authentication**: Implement user accounts to allow users to save their carts and purchase history.
 
-- **Product Categories**: Organize products into categories (e.g., beverages, fruits) for easier browsing.
+- **Product Categories**: Organise products into categories (e.g., beverages, fruits) for easier browsing.
 
 - **Order History**: Allow users to view their previous purchases and receipts.
 
