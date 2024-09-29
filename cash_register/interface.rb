@@ -1,6 +1,6 @@
 require_relative './models/product'
 require_relative './models/cart'
-require_relative './models/discounts'
+require_relative './models/pricing_rules'
 require_relative './views/view'
 require_relative './presenters/presenter'
 

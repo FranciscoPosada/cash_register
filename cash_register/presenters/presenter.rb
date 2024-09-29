@@ -14,16 +14,16 @@ class Presenter
 
       case user_choice
       when 'A'
-        @view.show_products(@store) # View products
+        @view.show_products(@store)
       when 'B'
-        @view.show_discounts         # View available discounts
+        @view.show_discounts
       when 'C'
-        handle_shopping              # Shopping process (add products)
+        handle_shopping
       when 'D'
-        handle_checkout              # Checkout process (finalize purchase)
+        handle_checkout
       when 'E'
-        @view.exit_message           # Exit
-        break                        # Break the loop to exit the program
+        @view.exit_message
+        break
       else
         puts "Invalid option, please try again."
       end
@@ -34,15 +34,15 @@ class Presenter
 
   def handle_shopping
     loop do
-      @view.show_products(@store)     # Show products to user during shopping
-      the_item = @view.get_item_input # Get input
+      @view.show_products(@store)
+      the_item = @view.get_item_input
 
-      break if the_item == "QUIT"     # Stop adding items when user types 'quit'
+      break if the_item == "QUIT"
 
       if @store.key?(the_item)
-        @cart.add_item(the_item)      # Add item to cart
+        @cart.add_item(the_item)
         puts "#{@store[the_item][:name]} added to your cart."
-        @view.show_cart(@cart, @store) # Show current cart after adding an item
+        @view.show_cart(@cart, @store)
       else
         puts "Sorry, we don't have this item in store today."
       end
@@ -54,7 +54,7 @@ class Presenter
       puts "Your cart is empty! Please shop first."
     else
       total = @cart.total_price(@pricing_rules)
-      @view.show_final_cart(@cart, @store, total) # Show final cart with total during checkout
+      @view.show_final_cart(@cart, @store, total)
     end
   end
 end

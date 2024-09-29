@@ -4,6 +4,11 @@ class View
     puts "-----------------------------------"
   end
 
+  # Generic method for displaying messages
+  def display_message(message)
+    puts message
+  end
+
   # Display the main menu options
   def display_menu
     puts "\nPlease select an option:"
