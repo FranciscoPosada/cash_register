@@ -6,32 +6,73 @@ Welcome to the Amenitiz Cash Register! We built this application to bring our C-
 snacks at low prices to employees at Amenitiz.
 
 This easy to use CLI application is built
-using Ruby, and allows users to view a selection of different products, add
-these products to their cart and see a total price at checkout with special
-discounting rules implemented where applicable.
+using Ruby, and allows users to  browse available products and discounts, add
+products to a shopping basket and view their computed bill inclusive of discount
+rules at checkout.
 
 ## Features
 
+- Users can choose their preferred action from a main menu:
+
+  ```bash
+    Welcome to Amenitiz Cash Register!
+    -----------------------------------
+
+    Please select an option:
+    A. View Available Products
+    B. View Discounts
+    C. Shop (Add Products to Basket)
+    D. Checkout
+    E. Exit
+  ```
+
 - Users can browse the selection of available products and their prices.
 
-  | Product Code | Name | Price |
-  |--|--|--|
-  | GR1 |  Green Tea | 3.11€ |
-  | SR1 |  Strawberries | 5.00 € |
-  | CF1 |  Coffee | 11.23 € |
+  ```bash
+    In our store today:
+    Green Tea (GR1): 3.11€
+    Strawberries (SR1): 5.0€
+    Coffee (CF1): 11.23€
+    -----------------------------------
+  ```
 
-- Users can choose to add items to their cart using unique item codes or checkout and view their bill at any time.
+- Users can browse discounts that are currently available to them.
 
-- The application computes a total final price at checkout, inclusive of special pricing rules and discounts specified by senior management:
+  ```bash
+    Discounts currently available:
+    - Buy-one-get-one-free on Green Tea (GR1)
+    - Strawberries (SR1): 4.50€ each when you buy 3 or more
+    - Coffee (CF1): 2/3 price discount when you buy 3 or more
+    -----------------------------------
+  ```
 
-    **Green Tea Deal - buy one get one free**
-    - For every unit of Green Tea (GR1) purchased, the user will get another unit for free.
+- Users can choose to add items to their cart using unique item codes.
 
-    **Discount on purchases of 3 or more Strawberries**
-    - Purchasing 3 or more units of Strawberries (SR1) reduces price per unit by 50 cents.
+  ```bash
+    In our store today:
+    Green Tea (GR1): 3.11€
+    Strawberries (SR1): 5.0€
+    Coffee (CF1): 11.23€
+    -----------------------------------
+    Which item code? (or 'quit' to stop adding items)
+  ```
 
-    **Discount on purchases of 3 or more Coffees**
-    - Purchasing 3 or more units of Coffee (CF1)creduces the price per unit to one-third.
+- Users can checkout to view their bill with a computed final price, inclusive
+of all applicable discounts
+
+  ```bash
+    Your cart:
+    Coffees (x2)
+    --------------------
+    Total bill: 22.46€
+  ```
+
+- Users can exit the application at any time
+
+  ```bash
+    Thank you for shopping with us! Goodbye.
+  ```
+
 
 ## Getting Started
 
@@ -60,12 +101,12 @@ ruby -v
     ```bash
     ruby interface.rb
 4. **Change git remote URL**
-To avoid accidentially pushing to the base project, update the Remote URL
-
     ```bash
     git remote set-url origin https://github.com/your_username/repo_name.git
     git remote -v
     ```
+
+
 ## Usage
 
 To add products to your cart, use their unique product codes provided in the
@@ -109,6 +150,45 @@ For example:
     Total bill: 27.46€
     ```
 
+
+## Testing
+
+The application includes a set of tests using RSpec to ensure that all models and
+views work as required and expected. Follow the steps below to execute testing.
+
+### 1. Install RSpec
+Install RSpec if it is not already installed.
+
+```bash
+  gem 'rspec'
+```
+Then run:
+
+```bash
+  bundle install
+```
+### 2. Initialise RSpec
+Initialise RSpec if it has not yet been initialised.
+
+```bash
+  bundle exec rspec --init
+```
+
+### 3. Run the tests
+To run all the tests, use the following command:
+
+```bash
+  bundle exec rspec
+```
+
+To run a specific test file, e.g. tests for the cart model, run:
+
+```bash
+  bundle exec rspec spec/models/cart_spec.rb
+```
+
+
+
 ## Roadmap
 
 - **User Authentication**: Implement user accounts to allow users to save their carts and purchase history.
@@ -116,6 +196,9 @@ For example:
 - **Product Categories**: Organize products into categories (e.g., beverages, fruits) for easier browsing.
 
 - **Order History**: Allow users to view their previous purchases and receipts.
+
+- **Front End Implementation**: Implement a Rails based front end to replace the
+CLI interface
 
 ## Contributing
 
